@@ -1,0 +1,46 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mr-3" href="#">WebApp for Sprinterra</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navb">
+        <ul class="navbar-nav mr-3">
+            <li class="nav-item">
+                <a class="nav-link" href="#!storeToken">Change store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!productsView" ng-hide="!added" >Show products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container my-5">
+    <div ng-hide="!added" class="alert alert-success" role="alert">
+        <strong> You successfully set token!</strong>
+    </div>
+    <div ng-hide="!showWarningMessage" class="alert alert-danger" role="alert">
+        <h6>{{warningMessage}}</h6>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form>
+                <div class="row">
+                    <label class="mt-4 formfields">Client id:</label>
+                    <input type="text" class="form-control formfields" ng-model="clientId" placeholder="id">
+                </div>
+                <div class="row">
+                    <label class="mt-4 formfields">Access token:</label>
+                    <input type="text" class="form-control formfields" ng-model="token" placeholder="token">
+                </div>
+                <div class="row">
+                    <label class="mt-4 formfields">API path(url):</label>
+                    <input type="text" class="form-control formfields" ng-model="baseUrl" placeholder="url">
+                </div>
+                <div class="row">
+                    <div class="col-8"></div>
+                    <button type="submit" class="col-3 btn btn-success formfields mt-5" ng-click="check()">Check</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

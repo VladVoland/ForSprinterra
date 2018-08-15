@@ -1,0 +1,49 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mr-3" href="#">WebApp for Sprinterra</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navb">
+        <ul class="navbar-nav mr-3">
+            <li class="nav-item">
+                <a class="nav-link" href="#!storeToken">Change store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!productsView" ng-hide="!added">Show products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container my-5">
+    <div class="row my-4">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <img src="{{mainImage}}" alt="Product image" />
+        </div>
+    </div>
+    <nav aria-label="breadcrumb mt-5">
+        <ol class="breadcrumb">
+            <li class="active col-12" aria-current="page"><h4>Product name:</h4></li>
+            <li class="breadcrumb-item active" aria-current="page"><p class="mt-2 ml-3">{{ product.name }}</p></li>
+        </ol>
+    </nav>
+    <nav aria-label="breadcrumb mt-5">
+        <ol class="breadcrumb">
+            <li class="active col-12" aria-current="page"><h4>Sku:</h4></li>
+            <li class="breadcrumb-item active" aria-current="page"><p class="mt-2 ml-3">{{ product.sku }}</p></li>
+        </ol>
+    </nav>
+    <nav aria-label="breadcrumb mt-5">
+        <ol class="breadcrumb">
+            <li class="active col-12" aria-current="page"><h4>Price:</h4></li>
+            <br />
+            <li class="breadcrumb-item active" aria-current="page"><p class="mt-2 ml-3">{{ product.price }} $</p></li>
+        </ol>
+    </nav>
+    <nav aria-label="breadcrumb mt-5">
+        <ol class="breadcrumb">
+            <li class="active col-12" aria-current="page"><h4>Description:</h4></li>
+            <li class="breadcrumb-item active" aria-current="page"><p class="mt-2 ml-3">{{ product.description }}</p></li>
+        </ol>
+    </nav>
+</div>

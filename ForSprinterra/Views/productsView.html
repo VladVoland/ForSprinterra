@@ -1,0 +1,53 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mr-3" href="#">WebApp for Sprinterra</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navb" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navb">
+        <ul class="navbar-nav mr-3">
+            <li class="nav-item">
+                <a class="nav-link" href="#!storeToken">Change store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!productsView" ng-hide="!added">Show products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container my-1">
+    <div class="container row mt-5">
+        <div class="col-5">
+            <button type="button" class="btn btn-secondary ml-5" ng-click="description()">Show/hide description</button>
+        </div>
+        <div class="form-group row col-7">
+            <input class="col-8" type="text" name="search" ng-model="words" placeholder="Keyword for search" />
+            <div class="col-4">
+                <button type="button" class="btn btn-secondary" ng-click="search()">Search</button>
+                <button type="button" class="btn btn-secondary" ng-click="reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <table class="w3-table w3-bordered w3-striped">
+        <tr>
+            <th><button class="btn btn-outline-secondary" ng-click="delete()">Delete</button></th>
+            <th class="mt-2 ml-2">Sku</th>
+            <th class="mt-2 ml-2">Name</th>
+            <th class="mt-2 ml-2">Price</th>
+            <th class="mt-2 ml-2" ng-hide="!show">Description</th>
+        </tr>
+        <tr ng-repeat="product in products">
+            <td>
+                <p class="mt-2">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input"  ng-click="deleteBox(product.id)" />
+                    </div>
+                </p>
+            </td>
+            <td><p class="mt-2">{{ product.sku }}</p></td>
+            <td><p class="mt-2"><a href="http://localhost:51236/#!/concreteProduct/{{ product.id }}">{{ product.name }}</a></p></td>
+            <td><p class="mt-2">{{ product.price }} $</p></td>
+            <td ng-hide="!show"><p class="mt-2">{{ product.description }}</p></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+﻿@using System.Web.Optimization
+@inherits System.Web.Mvc.WebViewPage
+@{ Layout = null; }<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+    <title>For Sprinterra</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/controllers")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+</head>
+<body>
+
+    <div ng-view></div>
+
+</body>
+</html>
