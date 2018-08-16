@@ -37,12 +37,8 @@ namespace ForSprinterra.Models.ProductModels
         [DataMember(Name = "weight")]
         public decimal? Weight { get; set; }
 
-        public string WeightUnit { get; set; }
-
         [DataMember(Name = "brand_id")]
         public long? BrandId { get; set; }
-
-        public string BrandName { get; set; }
         
     }
 }

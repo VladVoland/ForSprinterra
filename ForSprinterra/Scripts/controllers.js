@@ -38,10 +38,7 @@ app.controller('productsView', function ($scope, $http, $route) {
         $http.get("http://localhost:51236/api/products").then(function (response) {
             var data = response.data;
             data.forEach(function (item, i, data) {
-                item.description = item.description.replace("<p>", '');
-                item.description = item.description.replace("</p>", '');
-                item.description = item.description.replace("<em>", '');
-                item.description = item.description.replace("</em>", '');
+                item.description = item.description.replace(/<\/?[^>]+>/g, '');
             });
             $scope.products = data;
         });
@@ -50,10 +47,7 @@ app.controller('productsView', function ($scope, $http, $route) {
         $http.get("http://localhost:51236/api/products/find/" + keyword).then(function (response) {
             var data = response.data;
             data.forEach(function (item, i, data) {
-                item.description = item.description.replace("<p>", '');
-                item.description = item.description.replace("</p>", '');
-                item.description = item.description.replace("<em>", '');
-                item.description = item.description.replace("</em>", '');
+                item.description = item.description.replace(/<\/?[^>]+>/g, '');
             });
             $scope.products = data;
         });
@@ -109,10 +103,7 @@ app.controller('concreteProduct', function ($scope, $http, $routeParams) {
 
     $http.get("http://localhost:51236/api/products/" + $routeParams.id).then(function (response) {
         var data = response.data;
-        data.description = data.description.replace("<p>", '');
-        data.description = data.description.replace("</p>", '');
-        data.description = data.description.replace("<em>", '');
-        data.description = data.description.replace("</em>", '');
+        data.description = data.description.replace(/<\/?[^>]+>/g, '');
         $scope.product = data;
     });
 
